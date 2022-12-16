@@ -1,53 +1,55 @@
 package com.sanedge.reditclone.services;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sanedge.reditclone.dto.SubredditDto;
+import com.sanedge.reditclone.dto.SubredditDtos;
 import com.sanedge.reditclone.exception.SpringRedditException;
-import com.sanedge.reditclone.mapper.SubredditMapper;
 import com.sanedge.reditclone.models.Subreddit;
 import com.sanedge.reditclone.repository.SubredditRepository;
+import com.sanedge.reditclone.utils.SubredditToDto;
 
 @Service
-@Slf4j
 public class SubredditService {
-
     private final SubredditRepository subredditRepository;
-    private final SubredditMapper subredditMapper;
+    private final SubredditToDto subredditToDto;
+    private final AuthService authService;
 
     @Autowired
-    public SubredditService(SubredditRepository subredditRepository, SubredditMapper subredditMapper) {
+    public SubredditService(SubredditRepository subredditRepository, SubredditToDto subredditToDto,
+            AuthService authService) {
         this.subredditRepository = subredditRepository;
-        this.subredditMapper = subredditMapper;
+        this.subredditToDto = subredditToDto;
+        this.authService = authService;
     }
 
     @Transactional
-    public SubredditDto save(SubredditDto subredditDto) {
-        Subreddit save = subredditRepository.save(subredditMapper.mapDtoToSubreddit(subredditDto));
-        subredditDto.setId(save.getId());
-        return subredditDto;
+    public SubredditDto create(SubredditDto subredditDto) {
+        Subreddit _subreddit = new Subreddit();
+
+        _subreddit.setName(subredditDto.getName());
+        _subreddit.setDescription(subredditDto.getDescription());
+        _subreddit.setUser(authService.getCurrentUser());
+
+        this.subredditRepository.save(_subreddit);
+
+        return this.subredditToDto.mapSubredditToDto(_subreddit);
     }
 
-    @Transactional(readOnly = true)
-    public List<SubredditDto> getAll() {
-        return subredditRepository.findAll()
-                .stream()
-                .map(subredditMapper::mapSubredditToDto)
-                .collect(Collectors.toList());
+    public List<SubredditDtos> getAll() {
+        List<Subreddit> _subreddits = this.subredditRepository.findAll();
+
+        return this.subredditToDto.mapSubredditToDtos(_subreddits);
     }
 
-    public SubredditDto getSubreddit(Long id) {
+    public SubredditDto getSubReddit(long id) {
         Subreddit subreddit = subredditRepository.findById(id)
                 .orElseThrow(() -> new SpringRedditException("No subreddit found with ID - " + id));
-        return subredditMapper.mapSubredditToDto(subreddit);
+        return this.subredditToDto.mapSubredditToDto(subreddit);
     }
+
 }

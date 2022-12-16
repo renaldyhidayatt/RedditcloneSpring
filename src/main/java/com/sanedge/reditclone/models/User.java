@@ -1,5 +1,6 @@
 package com.sanedge.reditclone.models;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Objects;
@@ -45,6 +46,9 @@ public class User implements UserDetails {
   @NotBlank
   @Size(max = 120)
   private String password;
+
+  private Instant created;
+  private boolean enabled;
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,4 +1,4 @@
-package com.sanedge.reditclone.payload.response;
+package com.sanedge.reditclone.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

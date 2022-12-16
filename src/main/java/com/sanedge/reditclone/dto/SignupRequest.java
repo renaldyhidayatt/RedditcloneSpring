@@ -1,4 +1,4 @@
-package com.sanedge.reditclone.payload.request;
+package com.sanedge.reditclone.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

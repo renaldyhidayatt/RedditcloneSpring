@@ -64,7 +64,7 @@ public class AuthService {
         Date date = new Date();
         date.setTime(expiresAt);
 
-        User userDetails = (User) authentication.getPrincipal();
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
         return new AuthenticationResponse(jwt, date.toString(), userDetails.getUsername());
     }

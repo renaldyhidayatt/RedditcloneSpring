@@ -29,7 +29,7 @@ import lombok.NoArgsConstructor;
     @UniqueConstraint(columnNames = "username"),
     @UniqueConstraint(columnNames = "email")
 })
-public class User implements UserDetails {
+public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -49,40 +49,5 @@ public class User implements UserDetails {
 
   private Instant created;
   private boolean enabled;
-
-  @Override
-  public Collection<? extends GrantedAuthority> getAuthorities() {
-    return Collections.EMPTY_LIST;
-  }
-
-  @Override
-  public boolean isAccountNonExpired() {
-    return true;
-  }
-
-  @Override
-  public boolean isAccountNonLocked() {
-    return true;
-  }
-
-  @Override
-  public boolean isCredentialsNonExpired() {
-    return true;
-  }
-
-  @Override
-  public boolean isEnabled() {
-    return true;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
-    User user = (User) o;
-    return Objects.equals(id, user.id);
-  }
 
 }

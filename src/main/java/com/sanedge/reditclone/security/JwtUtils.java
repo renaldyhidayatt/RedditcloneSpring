@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import com.auth0.jwt.JWT;
@@ -13,6 +14,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.sanedge.reditclone.models.User;
+import com.sanedge.reditclone.services.UserDetailsImpl;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -42,7 +44,7 @@ public class JwtUtils {
   }
 
   public String generateAccessToken(Authentication authentication) {
-    User userPrincipal = (User) authentication.getPrincipal();
+    UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
 
     return JWT.create()
         .withIssuer(issuer)

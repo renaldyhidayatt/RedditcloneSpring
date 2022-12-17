@@ -1,6 +1,7 @@
 package com.sanedge.reditclone.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,6 +27,12 @@ public class WebSecurityConfig {
 
   @Autowired
   private AccessTokenEntryPoint unauthorizedHandler;
+
+  @Value("${springdoc.api-docs.path}")
+  private String restApiDocPath;
+
+  @Value("${springdoc.swagger-ui.path}")
+  private String swaggerPath;
 
   @Bean
   public AuthTokenFilter authenticationJwtTokenFilter() {
@@ -57,8 +64,12 @@ public class WebSecurityConfig {
     http.cors().and().csrf().disable()
         .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and().sessionManagement()
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeHttpRequests()
-        .requestMatchers("/api/auth/**").permitAll().requestMatchers("/api/test/**").permitAll().anyRequest()
-        .authenticated();
+        .requestMatchers(String.format("%s/**", restApiDocPath))
+        .permitAll()
+        .requestMatchers(String.format("%s/**", swaggerPath)).permitAll()
+        .requestMatchers("/api/auth/**").permitAll()
+        .requestMatchers("/api/test/**").permitAll()
+        .anyRequest().authenticated();
 
     http.authenticationProvider(authenticationProvider());
 

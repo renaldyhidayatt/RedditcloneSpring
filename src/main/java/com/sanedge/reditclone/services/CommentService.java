@@ -1,11 +1,13 @@
 package com.sanedge.reditclone.services;
 
+import java.time.Instant;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.sanedge.reditclone.dto.CommentRequest;
 import com.sanedge.reditclone.dto.CommentsDto;
 import com.sanedge.reditclone.exception.PostNotFoundException;
 import com.sanedge.reditclone.models.Comment;
@@ -40,12 +42,12 @@ public class CommentService {
         this.mailService = mailService;
     }
 
-    public void save(CommentsDto commentsDto) {
+    public void save(CommentRequest commentsDto) {
         Post post = postRepository.findById(commentsDto.getPostId())
                 .orElseThrow(() -> new PostNotFoundException(commentsDto.getPostId().toString()));
         Comment comment = new Comment();
         comment.setPost(post);
-        comment.setCreatedDate(commentsDto.getCreatedDate());
+        comment.setCreatedDate(Instant.now());
         comment.setText(commentsDto.getText());
         comment.setUser(authService.getCurrentUser());
 

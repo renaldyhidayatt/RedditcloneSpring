@@ -1,5 +1,8 @@
 package com.sanedge.reditclone.utils;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -47,7 +50,15 @@ public class PostToDto {
     }
 
     String getDuration(Post post) {
-        return TimeAgo.using(post.getCreatedDate().toEpochMilli());
+        Instant createdDate = post.getCreatedDate();
+        Instant now = Instant.now();
+        Duration duration = Duration.between(createdDate, now);
+        long days = duration.toDays();
+        long hours = duration.toHours() % 24;
+        long minutes = duration.toMinutes() % 60;
+        long seconds = duration.getSeconds() % 60;
+
+        return String.format("%d days, %d hours, %d minutes, %d seconds", days, hours, minutes, seconds);
     }
 
     boolean isPostUpVoted(Post post) {

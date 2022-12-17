@@ -1,0 +1,480 @@
+_type: export
+__export_format: 4
+__export_date: 2022-12-17T08:12:04.052Z
+__export_source: insomnia.desktop.app:v2022.5.1
+resources:
+  - _id: req_c0e610c197194a40b1b9859fbabd3b47
+    parentId: fld_0cc97f75b23c485a95e4a2968ba21705
+    modified: 1671264435956
+    created: 1671264408685
+    url: localhost:8080/api/comments/by-post/1
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMzQ5OTMxLCJpYXQiOjE2NzEyNjM1MzF9.tTzaBTwcyw7pXSbO8uecz5Go5AHiXSqoFOxvpgxAR3Xw-z-g7tU6eQGLH3Lw-pm6CT67XTHQ8HTHJS0xt3_QCg
+    metaSortKey: -1671264408685
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_0cc97f75b23c485a95e4a2968ba21705
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671263980575
+    created: 1671263980575
+    name: Comments
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1671263980575
+    _type: request_group
+  - _id: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    parentId: null
+    modified: 1671084413448
+    created: 1671084413448
+    name: redditclone
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_1f942b6557304672a6e153ef548900ae
+    parentId: fld_0cc97f75b23c485a95e4a2968ba21705
+    modified: 1671264676594
+    created: 1671263983593
+    url: localhost:8080/api/comments
+    name: New Request
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"postId": 1,
+        	"text": "dotasasa"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e396151279f24cf2b58c97ff4e81cd4b
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMzQ5OTMxLCJpYXQiOjE2NzEyNjM1MzF9.tTzaBTwcyw7pXSbO8uecz5Go5AHiXSqoFOxvpgxAR3Xw-z-g7tU6eQGLH3Lw-pm6CT67XTHQ8HTHJS0xt3_QCg
+    metaSortKey: -1671263983593
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_43133302f9d04a3a9b66029600e7f74d
+    parentId: fld_f6838c2214ed4374bbe411ac790468f6
+    modified: 1671262252776
+    created: 1671262232668
+    url: localhost:8080/api/test
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1671262232668
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_f6838c2214ed4374bbe411ac790468f6
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671262231330
+    created: 1671262231330
+    name: test
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1671262231330
+    _type: request_group
+  - _id: req_4557c0521cc049ed99b70bb08e548a02
+    parentId: fld_d02b338ff57f453694ea5de6d3089c00
+    modified: 1671262236396
+    created: 1671262160163
+    url: localhost:8080/rest-api-docs/
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMzQ4NTQ4LCJpYXQiOjE2NzEyNjIxNDh9.Ghxedjds-idefMR_ltyvbwUAQSxTl2PCDdSmmjG6Jn-_qQ90kmlVlGlQT8Uy5584IE0zaLgkuTVs7UEpIOkP3Q
+    metaSortKey: -1671262160163
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_d02b338ff57f453694ea5de6d3089c00
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671262158736
+    created: 1671262158736
+    name: Swagger
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1671262158736
+    _type: request_group
+  - _id: req_7a8422ce966b42d0853dce2bb52ffeb9
+    parentId: fld_3114f65da24742178c0609b94b9b97ed
+    modified: 1671263590300
+    created: 1671220170716
+    url: localhost:8080/api/posts
+    name: New Request
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"subredditName": "dota",
+        	"postName": "kentang",
+        	"url" :"itu",
+        	"description": "kentang"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_281560a19dbf4266a083ac2904712aa5
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMzAxODk1LCJpYXQiOjE2NzEyMTU0OTV9.vB8JqY6Uye9CfCHup72JoyHNEn3RvOuzcxd9mrwmxCHcFMRofiuJKu1cVdBSm064BeaMHwlfgrFA-Zzo0e5gqA
+    metaSortKey: -1671220170716
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_3114f65da24742178c0609b94b9b97ed
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671220145852
+    created: 1671220145852
+    name: Post
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1671220145852
+    _type: request_group
+  - _id: req_6886179176d6460cb0fe209e636e38f9
+    parentId: fld_3114f65da24742178c0609b94b9b97ed
+    modified: 1671263964305
+    created: 1671220147332
+    url: localhost:8080/api/posts
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMzQ5OTMxLCJpYXQiOjE2NzEyNjM1MzF9.tTzaBTwcyw7pXSbO8uecz5Go5AHiXSqoFOxvpgxAR3Xw-z-g7tU6eQGLH3Lw-pm6CT67XTHQ8HTHJS0xt3_QCg
+    metaSortKey: -1671220147332
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2d1bdcd424914909be3cc88b525fcf03
+    parentId: fld_402130c84250491383078982cfa7ebd0
+    modified: 1671263565254
+    created: 1671214114113
+    url: localhost:8080/api/subreddit
+    name: New Request
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "dota",
+        	"description": "golang"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_84b6b303225740c78a97bb45d68f0bd6
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMzQ5OTMxLCJpYXQiOjE2NzEyNjM1MzF9.tTzaBTwcyw7pXSbO8uecz5Go5AHiXSqoFOxvpgxAR3Xw-z-g7tU6eQGLH3Lw-pm6CT67XTHQ8HTHJS0xt3_QCg
+    metaSortKey: -1671214114113
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_402130c84250491383078982cfa7ebd0
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671214073675
+    created: 1671214073675
+    name: Subreddit
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1671214073675
+    _type: request_group
+  - _id: req_0ad557d6ca9e49af80f4986e3224dc6c
+    parentId: fld_402130c84250491383078982cfa7ebd0
+    modified: 1671263559498
+    created: 1671214075458
+    url: localhost:8080/api/subreddit
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMzAwNDk2LCJpYXQiOjE2NzEyMTQwOTZ9.6TL9l2z2x6a_cCPjJdPBcotMbJ-gatam0U-wZkBKxkDG6i33DL-DtxXEqkenC3NKK40Wi346tHCCGeMJcAe5Wg
+    metaSortKey: -1671214075458
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_750b1095f4a74bcfb3e3b9507c468a0b
+    parentId: fld_35a933b74f09406fb09ea767ceca387a
+    modified: 1671235369778
+    created: 1671156368326
+    url: localhost:8080/api/nyoba/nama
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMzIxNzUzLCJpYXQiOjE2NzEyMzUzNTN9.pz8PgiKEligFOFCarGloYulzkGH8ibfLuQKpx33kK_IR6iqRuSLrBNzgA7wkxPHxlO9TagiSivpQ5YJovyyguw
+    metaSortKey: -1671156368326
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_35a933b74f09406fb09ea767ceca387a
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671156366980
+    created: 1671156366980
+    name: nyoba
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1671156366980
+    _type: request_group
+  - _id: req_4294221b9612476aa8d0ec969c931bfa
+    parentId: fld_ff595f758b1a4e7987b23510fb77f622
+    modified: 1671220886546
+    created: 1671154173974
+    url: localhost:8080/api/auth/getNama
+    name: GetCurrentUser
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMzA3MjQ4LCJpYXQiOjE2NzEyMjA4NDh9.xtxaedA8DMNhKqsg6w5jS07AVGxKc_MaH7JevGemw15TC6xCDsi3uMu0tN-pDkRpLAAbPLZaXZSt9Ud9rheg2g
+    metaSortKey: -1671154173974
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_ff595f758b1a4e7987b23510fb77f622
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671084548724
+    created: 1671084548724
+    name: Auth
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1671084548724
+    _type: request_group
+  - _id: req_e7e9fd6c34504f74bf6c125c7f8cff79
+    parentId: fld_ff595f758b1a4e7987b23510fb77f622
+    modified: 1671220872845
+    created: 1671149599569
+    url: http://localhost:8080/api/auth/accountVerification/e59c6ed3-b4d9-44b8-8bc8-904cf0c61763
+    name: VerififyAccount
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1671149599569
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3e61f75d008644078e2d7f599f5fc1d8
+    parentId: fld_ff595f758b1a4e7987b23510fb77f622
+    modified: 1671155131939
+    created: 1671130192553
+    url: localhost:8080/api/auth/me
+    name: New Request
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsYW5ndmVyc2lvbiIsImlzcyI6Ik15QXBwIiwiZXhwIjoxNjcxMjQxNTIxLCJpYXQiOjE2NzExNTUxMjF9.AwP8AdGK0OlHg7B_EV931dUHtZB3LVLmitQ0KDnUlrBpuupq3xKCxN0RTY9okEbksvYULiz2nfLzyLnB53NXjQ
+    metaSortKey: -1671130192553
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_39fd9e8a0a2444b9860840494cf5ee2a
+    parentId: fld_ff595f758b1a4e7987b23510fb77f622
+    modified: 1671264013832
+    created: 1671084726185
+    url: localhost:8080/api/auth/login
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "langversion",
+        	"password": "Validation"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_9f9ac2aced8049648b312f8fcf4b39da
+    authentication: {}
+    metaSortKey: -1671084726185
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3b124539297b42b88d1055cb110cf188
+    parentId: fld_ff595f758b1a4e7987b23510fb77f622
+    modified: 1671234852146
+    created: 1671084550308
+    url: localhost:8080/api/auth/register
+    name: Register
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "langversion",
+        	"email": "jayde.kreiger@ethereal.email",
+        	"password": "Validation"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_98e09150eef04d618a599d6e760fd06e
+    authentication: {}
+    metaSortKey: -1671084550308
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_106d93565efcce4250721c198a20173e994ce82b
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671084413519
+    created: 1671084413519
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1671084413519
+    _type: environment
+  - _id: jar_106d93565efcce4250721c198a20173e994ce82b
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671087222632
+    created: 1671084413530
+    name: Default Jar
+    cookies:
+      - key: JSESSIONID
+        value: 15C500E8CE0CBA50F25FB3813E4A287F
+        domain: localhost
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2022-12-15T06:10:07.518Z
+        lastAccessed: 2022-12-15T06:53:42.632Z
+        id: "04356572766046973"
+    _type: cookie_jar
+  - _id: spc_745a3c3d97b54063a3aa97f3185f2754
+    parentId: wrk_4b83d3308a884f9190d7d6fe4e648a7b
+    modified: 1671084413501
+    created: 1671084413501
+    fileName: redditclone
+    contents: ""
+    contentType: yaml
+    _type: api_spec
